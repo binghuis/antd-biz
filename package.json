@@ -19,6 +19,7 @@
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
+    "rome:format": "rome format --write .",
     "start": "npm run dev"
   },
   "commitlint": {
@@ -27,21 +28,11 @@
     ]
   },
   "lint-staged": {
-    "*.{md,json}": [
-      "prettier --write --no-error-on-unmatched-pattern"
-    ],
-    "*.{css,less}": [
-      "stylelint --fix",
-      "prettier --write"
-    ],
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --parser=typescript --write"
-    ]
+    "*.{ts,tsx,js,jsx}": "rome format --write",
+    "*.{json,less,md}": "prettier --ignore-unknown --write"
+  },
+  "dependencies": {
+    "rome": "^11.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
