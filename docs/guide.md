@@ -1,1 +1,11 @@
-This is a guide example.
+---
+nav:
+  title: 指南
+  order: -1
+---
+
+# 快速上手
+
+## 依赖安装
+
+## 组件引入
