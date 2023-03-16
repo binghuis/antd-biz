@@ -7,3 +7,5 @@ hero:
     - text: 开始使用
       link: /
 ---
+
+doll-components

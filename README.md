@@ -1,6 +1,17 @@
-#
+# doll-components
 
-A static site base on [dumi](https://d.umijs.org).
+[![NPM version](https://img.shields.io/npm/v/doll-components.svg?style=flat)](https://npmjs.org/package/doll-components)
+[![NPM downloads](http://img.shields.io/npm/dm/doll-components.svg?style=flat)](https://npmjs.org/package/doll-components)
+
+A react library developed with dumi
+
+## Usage
+
+TODO
+
+## Options
+
+TODO
 
 ## Development
 
@@ -8,11 +19,20 @@ A static site base on [dumi](https://d.umijs.org).
 # install dependencies
 $ pnpm install
 
-# start dev server
+# develop library by docs demo
 $ pnpm start
 
-# build docs
+# build library source code
 $ pnpm run build
+
+# build library source code in watch mode
+$ pnpm run build:watch
+
+# build docs
+$ pnpm run docs:build
+
+# check your project for potential problems
+$ pnpm run doctor
 ```
 
 ## LICENSE

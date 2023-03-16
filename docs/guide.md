@@ -9,3 +9,9 @@ nav:
 ## 依赖安装
 
 ## 组件引入
+
+```jsx
+import React from 'react';
+
+export default () => <h1>Hello dumi!</h1>;
+```
