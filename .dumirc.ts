@@ -19,11 +19,11 @@ const themeConfig: IThemeConfig = {
     { title: '组件', link: '/components' },
   ],
   footer: 'Made with ❤️ by Binghuis',
-  nprogress: true,
+  nprogress: false,
   prefersColor: { default: 'auto', switch: true },
 };
 
 export default defineConfig({
   themeConfig,
-  mfsu: true,
+  mfsu: false,
 });
