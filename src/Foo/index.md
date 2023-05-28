@@ -3,7 +3,7 @@
 This is an example component.
 
 ```jsx
-import { Foo } from 'doll-components';
+import { Foo } from 'drick';
 
 export default () => <Foo title="Hello dumi!" />;
 ```

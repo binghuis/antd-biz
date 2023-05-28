@@ -1,7 +1,7 @@
-# doll-components
+# drick
 
-[![NPM version](https://img.shields.io/npm/v/doll-components.svg?style=flat)](https://npmjs.org/package/doll-components)
-[![NPM downloads](http://img.shields.io/npm/dm/doll-components.svg?style=flat)](https://npmjs.org/package/doll-components)
+[![NPM version](https://img.shields.io/npm/v/drick.svg?style=flat)](https://npmjs.org/package/drick)
+[![NPM downloads](http://img.shields.io/npm/dm/drick.svg?style=flat)](https://npmjs.org/package/drick)
 
 A react library developed with dumi
 

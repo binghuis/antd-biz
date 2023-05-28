@@ -1,5 +1,5 @@
 {
-  "name": "doll-components",
+  "name": "brick",
   "version": "0.0.1",
   "description": "A react library developed with dumi",
   "license": "MIT",
@@ -16,11 +16,9 @@
     "doctor": "father doctor",
     "lint": "npm run lint:es && npm run lint:css",
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
-    "lint:demo": "eslint components/*/demo/*.md",
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
-    "rome:format": "rome format --write .",
     "start": "npm run dev"
   },
   "commitlint": {
@@ -29,21 +27,31 @@
     ]
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": "rome format --write",
-    "*.{json,less,md}": "prettier --ignore-unknown --write"
-  },
-  "dependencies": {
-    "rome": "^11.0.0"
+    "*.{md,json}": [
+      "prettier --write --no-error-on-unmatched-pattern"
+    ],
+    "*.{css,less}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --parser=typescript --write"
+    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "@umijs/lint": "^4.0.59",
-    "dumi": "^2.1.15",
-    "eslint": "^8.36.0",
-    "father": "^4.1.6",
+    "@umijs/lint": "^4.0.0",
+    "dumi": "^2.2.0",
+    "eslint": "^8.23.0",
+    "father": "^4.1.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
@@ -60,5 +68,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "authors": []
+  "authors": [
+    "songbinghui@gmail.com"
+  ]
 }
