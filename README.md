@@ -1,7 +1,7 @@
-# drick
+# brick
 
-[![NPM version](https://img.shields.io/npm/v/drick.svg?style=flat)](https://npmjs.org/package/drick)
-[![NPM downloads](http://img.shields.io/npm/dm/drick.svg?style=flat)](https://npmjs.org/package/drick)
+[![NPM version](https://img.shields.io/npm/v/brick.svg?style=flat)](https://npmjs.org/package/brick)
+[![NPM downloads](http://img.shields.io/npm/dm/brick.svg?style=flat)](https://npmjs.org/package/brick)
 
 A react library developed with dumi
 
