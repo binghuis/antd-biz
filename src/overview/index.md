@@ -1,5 +1,5 @@
 ---
-title: 总览
+title: 指南
 ---
 
 `brick components`
