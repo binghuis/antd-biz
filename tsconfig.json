@@ -9,8 +9,8 @@
     "baseUrl": "./",
     "paths": {
       "@@/*": [".dumi/tmp/*"],
-      "@binghuis/biz-components": ["src"],
-      "@binghuis/biz-components/*": ["src/*", "*"]
+      "antd-biz": ["src"],
+      "antd-biz/*": ["src/*", "*"]
     }
   },
   "include": [".dumi/**/*", ".dumirc.ts", "src/**/*"]

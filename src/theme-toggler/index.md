@@ -3,7 +3,7 @@ title: Button
 ---
 
 ```jsx
-import { ThemeToggler } from '@binghuis/biz-components';
+import { ThemeToggler } from 'antd-biz';
 
 export default () => <ThemeToggler />;
 ```

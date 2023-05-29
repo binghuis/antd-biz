@@ -1,6 +1,6 @@
-# @binghuis/biz-components
+# Antd Biz
 
-[![NPM version](https://img.shields.io/npm/v/@binghuis/biz-components.svg?style=flat)](https://npmjs.org/package/@binghuis/biz-components)
+[![NPM version](https://img.shields.io/npm/v/antd-biz.svg?style=flat)](https://npmjs.org/package/antd-biz)
 
 A react library developed with dumi
 

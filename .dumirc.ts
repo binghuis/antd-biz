@@ -1,8 +1,8 @@
 import { defineConfig } from 'dumi';
 import { IThemeConfig } from 'dumi/dist/client/theme-api/types';
-import { homepage, name } from './package.json';
+import { homepage } from './package.json';
 const themeConfig: IThemeConfig = {
-  name,
+  name: 'AntdBiz',
   logo: 'https://raw.githubusercontent.com/binghuis/assets/main/imgs/icons8-brick-100.png',
   socialLinks: {
     github: homepage,

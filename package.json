@@ -1,14 +1,14 @@
 {
-  "name": "@binghuis/biz-components",
+  "name": "antd-biz",
   "version": "0.0.2",
   "description": "A react library developed with dumi",
-  "homepage": "https://github.com/binghuis/biz-components",
+  "homepage": "https://github.com/binghuis/antd-biz",
   "bugs": {
-    "url": "https://github.com/binghuis/biz-components/issues"
+    "url": "https://github.com/binghuis/antd-biz/issues"
   },
   "repository": {
     "type": "github",
-    "url": "https://github.com/binghuis/biz-components"
+    "url": "https://github.com/binghuis/antd-biz"
   },
   "license": "MIT",
   "module": "dist/index.js",
@@ -51,8 +51,10 @@
       "prettier --parser=typescript --write"
     ]
   },
+  "dependencies": {
+    "@babel/runtime": "^7.22.3"
+  },
   "devDependencies": {
-    "@babel/runtime": "^7.22.3",
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
     "@types/react": "^18.2.7",
