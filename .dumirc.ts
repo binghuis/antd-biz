@@ -1,11 +1,11 @@
 import { defineConfig } from 'dumi';
 import { IThemeConfig } from 'dumi/dist/client/theme-api/types';
-import { homepage } from './package.json';
+import { repository } from './package.json';
 const themeConfig: IThemeConfig = {
   name: 'AntdBiz',
   logo: 'https://raw.githubusercontent.com/binghuis/assets/main/imgs/icons8-brick-100.png',
   socialLinks: {
-    github: homepage,
+    github: repository.url,
   } as IThemeConfig['socialLinks'],
   nav: [],
   footer: 'Made with ❤️ by Binghuis',
