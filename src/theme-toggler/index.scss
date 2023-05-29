@@ -52,7 +52,7 @@ $stars-time: 7s;
     width: 100%;
     height: 100%;
     border-radius: inherit;
-    box-shadow: inset 0 0.5em 0.5em 0 rgba(0, 0, 0, 0.5), inset 0 -0.5em 1em 0 rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0.5em 0.5em 0 rgba(0, 0, 0, 0.5), inset 0 -0.15em 1em 0 rgba(0, 0, 0, 0.2);
     z-index: 2;
   }
 
@@ -129,7 +129,7 @@ $stars-time: 7s;
   &__stars {
     &::before {
       left: 2.4em;
-      top: 0.8em;
+      top: 0.4em;
       text-shadow: 6.1em 1.1em;
     }
     &::after {

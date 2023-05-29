@@ -3,7 +3,7 @@ import './index.scss';
 
 const ThemeToggler = (): ReactElement<HTMLDivElement> => {
   return (
-    <div style={{ transform: `scale(0.2)` }}>
+    <div style={{ transform: `scale(1)` }}>
       <label className="daynight">
         <input type="checkbox" className="daynight__checkbox" />
         <span className="daynight__sky">
