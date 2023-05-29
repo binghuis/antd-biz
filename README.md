@@ -1,7 +1,6 @@
-# brick
+# Brick Components
 
-[![NPM version](https://img.shields.io/npm/v/brick.svg?style=flat)](https://npmjs.org/package/brick)
-[![NPM downloads](http://img.shields.io/npm/dm/brick.svg?style=flat)](https://npmjs.org/package/brick)
+[![NPM version](https://img.shields.io/npm/v/brick-components.svg?style=flat)](https://npmjs.org/package/brick-components)
 
 A react library developed with dumi
 
