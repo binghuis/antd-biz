@@ -3,7 +3,7 @@ title: Button
 ---
 
 ```jsx
-import { ThemeToggler } from 'brick';
+import { ThemeToggler } from '@binghuis/brick-ui';
 
 export default () => <ThemeToggler />;
 ```
