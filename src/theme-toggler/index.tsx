@@ -3,13 +3,13 @@ import './index.scss';
 
 const ThemeToggler = (): ReactElement<HTMLDivElement> => {
   return (
-    <div className={'wrapper'}>
-      <label className={'daynight'}>
-        <input type="checkbox" className="daynight-checkbox" />
-        <span className="daynight-sky">
-          <span className="daynight-stars"></span>
-          <span className="daynight-morestars"></span>
-          <span className="daynight-sunmoon"></span>
+    <div style={{ transform: `scale(0.2)` }}>
+      <label className="daynight">
+        <input type="checkbox" className="daynight__checkbox" />
+        <span className="daynight__sky">
+          <span className="daynight__stars"></span>
+          <span className="daynight__morestars"></span>
+          <span className="daynight__sunmoon"></span>
         </span>
       </label>
     </div>
