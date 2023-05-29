@@ -9,8 +9,8 @@
     "baseUrl": "./",
     "paths": {
       "@@/*": [".dumi/tmp/*"],
-      "brick": ["src"],
-      "brick/*": ["src/*", "*"]
+      "@binghuis/biz-components": ["src"],
+      "@binghuis/biz-components/*": ["src/*", "*"]
     }
   },
   "include": [".dumi/**/*", ".dumirc.ts", "src/**/*"]

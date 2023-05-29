@@ -1,6 +1,6 @@
-# Brick Components
+# @binghuis/biz-components
 
-[![NPM version](https://img.shields.io/npm/v/brick-components.svg?style=flat)](https://npmjs.org/package/brick-components)
+[![NPM version](https://img.shields.io/npm/v/@binghuis/biz-components.svg?style=flat)](https://npmjs.org/package/@binghuis/biz-components)
 
 A react library developed with dumi
 

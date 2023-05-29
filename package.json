@@ -2,13 +2,13 @@
   "name": "@binghuis/biz-components",
   "version": "0.0.1",
   "description": "A react library developed with dumi",
-  "homepage": "https://github.com/binghuis/brick-components",
+  "homepage": "https://github.com/binghuis/biz-components",
   "bugs": {
-    "url": "https://github.com/binghuis/brick-components/issues"
+    "url": "https://github.com/binghuis/biz-components/issues"
   },
   "repository": {
     "type": "github",
-    "url": "https://github.com/binghuis/brick-components"
+    "url": "https://github.com/binghuis/biz-components"
   },
   "license": "MIT",
   "module": "dist/index.js",
