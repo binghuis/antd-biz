@@ -1,6 +1,6 @@
-# ThemeToggler
-
-This is an example component.
+---
+title: Button
+---
 
 ```jsx
 import { ThemeToggler } from 'brick';

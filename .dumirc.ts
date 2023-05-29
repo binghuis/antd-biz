@@ -3,6 +3,7 @@ import { IThemeConfig } from 'dumi/dist/client/theme-api/types';
 
 const themeConfig: IThemeConfig = {
   name: '🧱 Brick',
+
   // logo: '',
   socialLinks: {
     github: 'https://github.com/binghuis/brick-components',
@@ -16,7 +17,7 @@ const themeConfig: IThemeConfig = {
   },
   nav: [
     { title: '指南', link: '/guide' },
-    { title: '组件', link: '/components' },
+    { title: '组件', link: '/components/overview' },
   ],
   footer: 'Made with ❤️ by Binghuis',
   nprogress: false,
@@ -25,5 +26,6 @@ const themeConfig: IThemeConfig = {
 
 export default defineConfig({
   themeConfig,
+  outputPath: 'docs-dist',
   mfsu: false,
 });
