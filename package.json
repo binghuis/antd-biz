@@ -2,7 +2,7 @@
   "name": "antd-biz",
   "version": "0.0.3",
   "description": "A react library developed with dumi",
-  "homepage": "https://github.com/binghuis/antd-biz",
+  "homepage": "https://antd-biz.vercel.app",
   "bugs": {
     "url": "https://github.com/binghuis/antd-biz/issues"
   },
