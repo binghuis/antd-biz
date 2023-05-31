@@ -1,9 +1,14 @@
 import React, { ReactElement } from 'react';
 import './index.scss';
 
-const ThemeToggler = (): ReactElement<HTMLDivElement> => {
+interface ThemeTogglerProps {
+  size?: number;
+}
+
+const ThemeToggler = (props: ThemeTogglerProps): ReactElement<HTMLDivElement> => {
+  const { size = 0.4 } = props;
   return (
-    <div style={{ transform: `scale(1)` }}>
+    <div style={{ transform: `scale(${size})` }}>
       <label className="daynight">
         <input type="checkbox" className="daynight__checkbox" />
         <span className="daynight__sky">
