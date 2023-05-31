@@ -8,10 +8,8 @@
     "jsx": "react",
     "baseUrl": "./",
     "paths": {
-      "@@/*": [".dumi/tmp/*"],
-      "antd-biz": ["src"],
-      "antd-biz/*": ["src/*", "*"]
+      "antd-biz": ["components"]
     }
   },
-  "include": [".dumi/**/*", ".dumirc.ts", "src/**/*"]
+  "include": [".dumi/**/*", ".dumirc.ts", "components/**/*"]
 }
