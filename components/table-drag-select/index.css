@@ -1,13 +1,4 @@
-.container {
-  padding: 0.5rem;
-  width: 50vmin;
-  height: 50vmin;
-  background: #dbe9ff;
-  border-radius: 0.5rem;
-  user-select: none;
-}
-
-.container td {
+table td {
   width: 20px;
   height: 20px;
   background: #acf;
@@ -15,7 +6,7 @@
   padding: 4px;
 }
 
-.container td.selected {
+table td.selected {
   background: #5f9efc;
 }
 
@@ -25,6 +16,10 @@
 }
 
 table {
+  padding: 0.5rem;
+  background: #dbe9ff;
+  border-radius: 0.5rem;
+  user-select: none;
   border-collapse: separate;
   border-spacing: 0.5em;
 }

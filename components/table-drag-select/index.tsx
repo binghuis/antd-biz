@@ -9,22 +9,25 @@ type TableDragSelectProps = {
 };
 
 export default function TableDragSelect(props: TableDragSelectProps) {
-  const { rows = 6, cols = 8, initialValue } = props;
+  const { rows = 7, cols = 24, initialValue } = props;
+
   const emptyVal: boolean[][] = new Array(rows).fill(null).map(() => new Array(cols).fill(false));
+
   const initialVal = initialValue ?? emptyVal;
-  const [selected, setSelected] = useState<boolean[][]>(initialVal);
+
+  const [cubes, setCubes] = useState<boolean[][]>(initialVal);
 
   const getRowColumnIndex = (index: string) => {
     return index.split('-').map(Number);
   };
 
-  const extractIds = (els: Element[]): (string | null)[] =>
+  const extractKey = (els: Element[]): (string | null)[] =>
     els.map((v) => v.getAttribute('data-key')).filter(Boolean);
 
   const onStart = ({ event, selection }: SelectionEvent) => {
     if (!event?.ctrlKey && !event?.metaKey) {
       selection.clearSelection();
-      setSelected(emptyVal);
+      setCubes(emptyVal);
     }
   };
 
@@ -33,16 +36,16 @@ export default function TableDragSelect(props: TableDragSelectProps) {
       changed: { added, removed },
     },
   }: SelectionEvent) => {
-    setSelected((prev) => {
+    setCubes((prev) => {
       const next = prev.map((row) => [...row]);
-      extractIds(added).forEach((id) => {
+      extractKey(added).forEach((id) => {
         if (!id) {
           return;
         }
         const [rowIndex, columnIndex] = getRowColumnIndex(id);
         next[rowIndex][columnIndex] = true;
       });
-      extractIds(removed).forEach((id) => {
+      extractKey(removed).forEach((id) => {
         if (!id) {
           return;
         }
@@ -58,7 +61,7 @@ export default function TableDragSelect(props: TableDragSelectProps) {
       <button
         type="button"
         onClick={() => {
-          setSelected(emptyVal);
+          setCubes(emptyVal);
         }}
       >
         clear
@@ -66,7 +69,7 @@ export default function TableDragSelect(props: TableDragSelectProps) {
       <button
         type="button"
         onClick={() => {
-          setSelected((selected) => selected.map((rows) => rows.map(() => true)));
+          setCubes((selected) => selected.map((rows) => rows.map(() => true)));
         }}
       >
         all
@@ -74,35 +77,39 @@ export default function TableDragSelect(props: TableDragSelectProps) {
       <button
         type="button"
         onClick={() => {
-          setSelected(initialVal);
+          setCubes(initialVal);
         }}
       >
         reset
       </button>
-      <SelectionArea
-        className="container"
-        onStart={onStart}
-        onMove={onMove}
-        selectables=".selectable"
-      >
+      <SelectionArea onStart={onStart} onMove={onMove} selectables=".selectable">
         <table>
-          {selected.map((rows, rowIndex) => {
-            return (
-              <tr key={rowIndex}>
-                {rows.map((col, columnIndex) => {
-                  return (
-                    <td
-                      className={
-                        selected[rowIndex][columnIndex] ? 'selected selectable' : 'selectable'
-                      }
-                      data-key={`${rowIndex}-${columnIndex}`}
-                      key={`${rowIndex}-${columnIndex}`}
-                    />
-                  );
-                })}
-              </tr>
-            );
-          })}
+          <thead>
+            <tr>
+              {Array.from({ length: cols }, (_, index) => (
+                <th key={index}>{`${index + 1}`.padStart(2, '0')}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {cubes.map((rows, rowIndex) => {
+              return (
+                <tr key={rowIndex}>
+                  {rows.map((col, columnIndex) => {
+                    return (
+                      <td
+                        className={
+                          cubes[rowIndex][columnIndex] ? 'selected selectable' : 'selectable'
+                        }
+                        data-key={`${rowIndex}-${columnIndex}`}
+                        key={`${rowIndex}-${columnIndex}`}
+                      />
+                    );
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       </SelectionArea>
     </>
