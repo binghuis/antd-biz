@@ -1,12 +1,11 @@
-table td {
-  width: 20px;
-  height: 20px;
+tbody td {
+  width: 16px;
+  height: 24px;
   background: #acf;
-  border-radius: 0.25rem;
-  padding: 4px;
+  border-radius: 2px;
 }
 
-table td.selected {
+tbody td.selected {
   background: #5f9efc;
 }
 
@@ -20,6 +19,4 @@ table {
   background: #dbe9ff;
   border-radius: 0.5rem;
   user-select: none;
-  border-collapse: separate;
-  border-spacing: 0.5em;
 }

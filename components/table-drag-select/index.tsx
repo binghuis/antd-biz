@@ -84,13 +84,13 @@ export default function TableDragSelect(props: TableDragSelectProps) {
       </button>
       <SelectionArea onStart={onStart} onMove={onMove} selectables=".selectable">
         <table>
-          <thead>
+          {/* <thead>
             <tr>
               {Array.from({ length: cols }, (_, index) => (
-                <th key={index}>{`${index + 1}`.padStart(2, '0')}</th>
+                <td key={index}>{`${index + 1}`.padStart(2, '0')}</td>
               ))}
             </tr>
-          </thead>
+          </thead> */}
           <tbody>
             {cubes.map((rows, rowIndex) => {
               return (
