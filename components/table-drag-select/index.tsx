@@ -1,19 +1,30 @@
 import SelectionArea, { SelectionEvent } from '@viselect/react';
 import React, { useState } from 'react';
 import './index.css';
-export default function TableDragSelect() {
-  const [selected, setSelected] = useState<Set<number>>(() => new Set());
 
-  const extractIds = (els: Element[]): number[] =>
-    els
-      .map((v) => v.getAttribute('data-key'))
-      .filter(Boolean)
-      .map(Number);
+type TableDragSelectProps = {
+  rows: number;
+  cols: number;
+  initialValue?: boolean[][];
+};
+
+export default function TableDragSelect(props: TableDragSelectProps) {
+  const { rows = 6, cols = 8, initialValue } = props;
+  const emptyVal: boolean[][] = new Array(rows).fill(null).map(() => new Array(cols).fill(false));
+  const initialVal = initialValue ?? emptyVal;
+  const [selected, setSelected] = useState<boolean[][]>(initialVal);
+
+  const getRowColumnIndex = (index: string) => {
+    return index.split('-').map(Number);
+  };
+
+  const extractIds = (els: Element[]): (string | null)[] =>
+    els.map((v) => v.getAttribute('data-key')).filter(Boolean);
 
   const onStart = ({ event, selection }: SelectionEvent) => {
     if (!event?.ctrlKey && !event?.metaKey) {
       selection.clearSelection();
-      setSelected(() => new Set());
+      setSelected(emptyVal);
     }
   };
 
@@ -23,9 +34,21 @@ export default function TableDragSelect() {
     },
   }: SelectionEvent) => {
     setSelected((prev) => {
-      const next = new Set(prev);
-      extractIds(added).forEach((id) => next.add(id));
-      extractIds(removed).forEach((id) => next.delete(id));
+      const next = prev.map((row) => [...row]);
+      extractIds(added).forEach((id) => {
+        if (!id) {
+          return;
+        }
+        const [rowIndex, columnIndex] = getRowColumnIndex(id);
+        next[rowIndex][columnIndex] = true;
+      });
+      extractIds(removed).forEach((id) => {
+        if (!id) {
+          return;
+        }
+        const [rowIndex, columnIndex] = getRowColumnIndex(id);
+        next[rowIndex][columnIndex] = false;
+      });
       return next;
     });
   };
@@ -35,7 +58,7 @@ export default function TableDragSelect() {
       <button
         type="button"
         onClick={() => {
-          setSelected(() => new Set());
+          setSelected(emptyVal);
         }}
       >
         clear
@@ -43,7 +66,7 @@ export default function TableDragSelect() {
       <button
         type="button"
         onClick={() => {
-          console.log(selected);
+          setSelected((selected) => selected.map((rows) => rows.map(() => true)));
         }}
       >
         all
@@ -51,7 +74,7 @@ export default function TableDragSelect() {
       <button
         type="button"
         onClick={() => {
-          console.log(selected);
+          setSelected(initialVal);
         }}
       >
         reset
@@ -62,13 +85,25 @@ export default function TableDragSelect() {
         onMove={onMove}
         selectables=".selectable"
       >
-        {new Array(36).fill(0).map((_, index) => (
-          <div
-            className={selected.has(index) ? 'selected selectable' : 'selectable'}
-            data-key={index}
-            key={index}
-          />
-        ))}
+        <table>
+          {selected.map((rows, rowIndex) => {
+            return (
+              <tr key={rowIndex}>
+                {rows.map((col, columnIndex) => {
+                  return (
+                    <td
+                      className={
+                        selected[rowIndex][columnIndex] ? 'selected selectable' : 'selectable'
+                      }
+                      data-key={`${rowIndex}-${columnIndex}`}
+                      key={`${rowIndex}-${columnIndex}`}
+                    />
+                  );
+                })}
+              </tr>
+            );
+          })}
+        </table>
       </SelectionArea>
     </>
   );
