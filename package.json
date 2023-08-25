@@ -16,7 +16,7 @@
   },
   "scripts": {
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "dev": "storybook dev -p 6006",
+    "dev": "storybook dev",
     "build": "storybook build",
     "build:lib": "tsc && vite build"
   },
