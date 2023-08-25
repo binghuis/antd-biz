@@ -1,6 +1,11 @@
 ---
-title: 拖选表格
+mobile: false
+group:
+  title: 业务组件
+  order: 1
 ---
+
+# 拖选表格
 
 ```jsx
 import { TableDragSelect } from 'antd-biz';
