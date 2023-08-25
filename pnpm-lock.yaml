@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@viselect/react':
+    specifier: ^3.3.1
+    version: 3.3.1(react@18.2.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -24,6 +27,9 @@ devDependencies:
   '@storybook/blocks':
     specifier: ^7.3.2
     version: 7.3.2(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)
+  '@storybook/builder-vite':
+    specifier: ^7.3.2
+    version: 7.3.2(typescript@5.2.2)(vite@4.4.9)
   '@storybook/react':
     specifier: ^7.3.2
     version: 7.3.2(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
@@ -3697,7 +3703,7 @@ packages:
   /@types/node-fetch@2.6.4:
     resolution: {integrity: sha512-1ZX9fcN4Rvkvgv4E6PAY5WXUFWFcRWxZa3EW83UjycOB9ljJCedb2CupIP4RZMEwF/M3eTcCihbBRgwtGbg5Rg==}
     dependencies:
-      '@types/node': 16.18.46
+      '@types/node': 20.5.6
       form-data: 3.0.1
     dev: true
 
@@ -3978,6 +3984,19 @@ packages:
       '@typescript-eslint/types': 6.4.1
       eslint-visitor-keys: 3.4.3
     dev: true
+
+  /@viselect/react@3.3.1(react@18.2.0):
+    resolution: {integrity: sha512-0tMzQy/7TehlPNk6rOck0bctWjbRd014jiek6KusgUOLvE8TQRbLn7zc5zpojG7J6dAYTRUcyzLgmD+EIy4E+Q==}
+    peerDependencies:
+      react: '>=17.0.2'
+    dependencies:
+      '@viselect/vanilla': 3.3.1
+      react: 18.2.0
+    dev: false
+
+  /@viselect/vanilla@3.3.1:
+    resolution: {integrity: sha512-QqkPGV+uyteX/HqzhHp5ZRfpVYiA0A3umh8HT/nfoBKccoA/kiTdI+5B/8ZPijtanBj9NNymMMPCn0W+/BeEyg==}
+    dev: false
 
   /@vitejs/plugin-react-swc@3.3.2(vite@4.4.9):
     resolution: {integrity: sha512-VJFWY5sfoZerQRvJrh518h3AcQt6f/yTuWn4/TRB+dqmYU0NX1qz7qM5Wfd+gOQqUzQW4gxKqKN3KpE/P3+zrA==}
