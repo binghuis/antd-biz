@@ -1,89 +1,38 @@
 {
   "name": "antd-biz",
-  "version": "0.0.7",
-  "description": "A react library developed with dumi",
-  "homepage": "https://antd-biz.vercel.app",
-  "bugs": {
-    "url": "https://github.com/binghuis/antd-biz/issues"
-  },
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/binghuis/antd-biz"
-  },
-  "license": "MIT",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
   "scripts": {
-    "build": "father build",
-    "build:watch": "father dev",
-    "dev": "dumi dev",
-    "docs:build": "dumi build",
-    "doctor": "father doctor",
-    "lint": "npm run lint:es && npm run lint:css",
-    "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
-    "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
-    "prepare": "husky install && dumi setup",
-    "prepublishOnly": "father doctor && npm run build",
-    "release": "release-it",
-    "start": "npm run dev"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "*.{md,json}": [
-      "prettier --write --no-error-on-unmatched-pattern"
-    ],
-    "*.{css,less}": [
-      "stylelint --fix",
-      "prettier --write"
-    ],
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --parser=typescript --write"
-    ]
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build"
   },
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
-    "@viselect/react": "^3.3.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.7.1",
-    "@commitlint/config-conventional": "^17.7.0",
+    "@storybook/addon-essentials": "^7.3.2",
+    "@storybook/addon-interactions": "^7.3.2",
+    "@storybook/addon-links": "^7.3.2",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.3.2",
+    "@storybook/react": "^7.3.2",
+    "@storybook/react-vite": "^7.3.2",
+    "@storybook/testing-library": "^0.2.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "@umijs/lint": "^4.0.77",
-    "auto-changelog": "^2.4.0",
-    "dumi": "^2.2.6",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@vitejs/plugin-react-swc": "^3.3.2",
     "eslint": "^8.47.0",
-    "father": "^4.3.1",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
-    "prettier": "^3.0.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-storybook": "^0.6.13",
     "prettier-plugin-organize-imports": "^3.2.3",
-    "prettier-plugin-packagejson": "^2.4.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "release-it": "^16.1.5",
-    "stylelint": "^15.10.3"
-  },
-  "peerDependencies": {
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "authors": [
-    "songbinghui@gmail.com"
-  ]
+    "storybook": "^7.3.2",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9"
+  }
 }
