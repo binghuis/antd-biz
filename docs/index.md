@@ -5,4 +5,6 @@ hero:
   actions:
     - text: 开始使用
       link: /components/overview
+    - text: GitHub
+      link: https://github.com/binghuis/antd-biz
 ---
