@@ -1,7 +1,7 @@
 import SelectionArea, { SelectionEvent } from '@viselect/react';
-import React, { useState } from 'react';
+import { theme } from 'antd';
+import { useState } from 'react';
 import './index.css';
-
 type TableDragSelectProps = {
   rows: number;
   cols: number;
@@ -10,7 +10,8 @@ type TableDragSelectProps = {
 
 export default function TableDragSelect(props: TableDragSelectProps) {
   const { rows = 7, cols = 24, initialValue } = props;
-
+  const { useToken } = theme;
+  const { token } = useToken();
   const emptyVal: boolean[][] = new Array(rows).fill(null).map(() => new Array(cols).fill(false));
 
   const initialVal = initialValue ?? emptyVal;
@@ -57,7 +58,15 @@ export default function TableDragSelect(props: TableDragSelectProps) {
   };
 
   return (
-    <>
+    <div
+      style={{
+        backgroundColor: token.colorPrimaryBg,
+        padding: token.padding,
+        borderRadius: token.borderRadius,
+        color: token.colorPrimaryText,
+        fontSize: token.fontSize,
+      }}
+    >
       <button
         type="button"
         onClick={() => {
@@ -112,6 +121,6 @@ export default function TableDragSelect(props: TableDragSelectProps) {
           </tbody>
         </table>
       </SelectionArea>
-    </>
+    </div>
   );
 }

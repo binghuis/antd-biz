@@ -9,7 +9,13 @@ group:
 
 ```jsx
 import { TableDragSelect } from 'antd-biz';
+import { Button } from 'antd';
 export default () => {
-  return <TableDragSelect />;
+  return (
+    <div>
+      <TableDragSelect />
+      <Button>3333</Button>
+    </div>
+  );
 };
 ```

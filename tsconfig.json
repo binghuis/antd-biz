@@ -5,11 +5,12 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
-      "antd-biz": ["components"]
+      "antd-biz": ["components"],
+      "@@/*": [".dumi/tmp/*"]
     }
   },
-  "include": [".dumi/**/*", ".dumirc.ts", "components/**/*"]
+  "include": [".dumi/**/*", ".dumirc.ts", "components/**/*", "**/*.tsx"]
 }
