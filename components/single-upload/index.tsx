@@ -118,7 +118,7 @@ const SingleUpload: React.FC<SingleUploadProps<{ fileUri: string | number } | vo
       </Upload>
 
       <Modal open={previewOpen} title={previewTitle} footer={null} onCancel={handleCancel}>
-        <img alt="example" style={{ width: '100%' }} src={previewImage} />
+        <img alt={previewTitle} style={{ width: '100%' }} src={previewImage} />
       </Modal>
     </div>
   );
