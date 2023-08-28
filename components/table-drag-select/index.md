@@ -7,15 +7,9 @@ group:
 
 # 拖选表格
 
-```jsx
+```tsx
 import { TableDragSelect } from 'antd-biz';
-import { Button } from 'antd';
 export default () => {
-  return (
-    <div>
-      <TableDragSelect />
-      <Button>3333</Button>
-    </div>
-  );
+  return <TableDragSelect />;
 };
 ```

@@ -1,4 +1,4 @@
-import { ConfigProvider, theme } from 'antd';
+import { App as AntdApp, ConfigProvider, theme } from 'antd';
 import { useOutlet, usePrefersColor } from 'dumi';
 
 const GlobalLayout: React.FC = () => {
@@ -11,7 +11,7 @@ const GlobalLayout: React.FC = () => {
         algorithm: color === 'dark' ? theme.darkAlgorithm : theme.defaultAlgorithm,
       }}
     >
-      {outlet}
+      <AntdApp>{outlet}</AntdApp>
     </ConfigProvider>
   );
 };
