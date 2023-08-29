@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@babel/runtime':
+    specifier: ^7.22.11
+    version: 7.22.11
   '@viselect/react':
     specifier: ^3.3.1
     version: 3.3.1(react@18.2.0)
@@ -12,9 +15,6 @@ dependencies:
     version: 2.9.1(react-dom@18.2.0)(react@18.2.0)
 
 devDependencies:
-  '@babel/runtime':
-    specifier: ^7.22.11
-    version: 7.22.11
   '@commitlint/cli':
     specifier: ^17.7.1
     version: 17.7.1
@@ -34,8 +34,8 @@ devDependencies:
     specifier: ^4.0.78
     version: 4.0.78(eslint@8.48.0)(styled-components@5.3.11)(stylelint@14.4.0)(typescript@5.0.4)
   antd:
-    specifier: ^5.8.4
-    version: 5.8.4(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^5.8.5
+    version: 5.8.5(react-dom@18.2.0)(react@18.2.0)
   auto-changelog:
     specifier: ^2.4.0
     version: 2.4.0
@@ -540,7 +540,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.0
-    dev: true
 
   /@babel/template@7.21.9:
     resolution: {integrity: sha512-MK0X5k8NKOuWRamiEfc3KEJiHMTkGZNUjzMipqCGDDc6ijRl/B7RGSKVGncu4Ro/HdyzzY6cmoXuKI2Gffk7vQ==}
@@ -3323,8 +3322,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /antd@5.8.4(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-DbQUmRWf9GAllZsc9NxL9gnrup75F7iZ0OlFY+mXh31JdSYQLLP07CAOK7z/sdQLQdYnAHWyuWvkb2mrRKxnYA==}
+  /antd@5.8.5(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-CaCl0BquElbSmilzKunyf22hVhgErKjzh2twQ+ZuFUSZfTOibi6/bwXp93lnT/VGgnc3Z3f2OizybzXWR7/tQg==}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
@@ -11693,7 +11692,6 @@ packages:
 
   /regenerator-runtime@0.14.0:
     resolution: {integrity: sha512-srw17NI0TUWHuGa5CFGGmhfNIeja30WMBfbslPNhf6JrqQlLN5gcrvig1oqPxiVaXb0oW0XRKtH6Nngs5lKCIA==}
-    dev: true
 
   /regexp.prototype.flags@1.5.0:
     resolution: {integrity: sha512-0SutC3pNudRKgquxGoRGIz946MZVHqbNfPjBdxeOhBrdgDKlRoXmYLQN9xRbrR09ZXWeGAdPuif7egofn6v5LA==}
