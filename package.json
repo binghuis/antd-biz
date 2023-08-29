@@ -39,7 +39,7 @@
     "*.{md,json}": [
       "prettier --write --no-error-on-unmatched-pattern"
     ],
-    "*.{css,less}": [
+    "*.{css,less,scss}": [
       "stylelint --fix",
       "prettier --write"
     ],
