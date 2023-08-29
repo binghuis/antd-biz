@@ -38,6 +38,7 @@ interface SingleUploadProps<Response extends { fileUri: string | number } | void
   value?: string;
   onChange?: (fileUri: string) => void;
   service: (file: RcFile) => Promise<Response>;
+  uploadText?: React.ReactNode;
 }
 
 const getTitleFromImgUrl = (url?: string) => {
@@ -46,10 +47,10 @@ const getTitleFromImgUrl = (url?: string) => {
 
 const SingleUpload: React.FC<SingleUploadProps<{ fileUri: string | number } | void>> = (props) => {
   const { message } = App.useApp();
-  const { service, accept = 'image/*', value } = props;
+  const { service, accept = 'image/*', value, uploadText = '+ 上传' } = props;
   const uid = useId();
 
-  const [previewImage, setPreviewImage] = useState('');
+  const [previewImage, setPreviewImage] = useState(value);
   const [previewTitle, setPreviewTitle] = useState<string>('');
   const [status, setStatus] = useState<UploadFileStatus>();
   const [fileList, setFileList] = useState<UploadFile[]>(
@@ -103,18 +104,28 @@ const SingleUpload: React.FC<SingleUploadProps<{ fileUri: string | number } | vo
     <div>
       <Upload
         accept={accept}
-        listType="picture-card"
         fileList={fileList}
+        listType="picture-circle"
         maxCount={1}
         multiple={false}
         customRequest={handleUpload}
         onChange={handleChange}
         showUploadList={true}
         onPreview={handlePreview}
+        progress={{
+          strokeColor: {
+            '0%': '#108ee9',
+            '100%': '#87d068',
+          },
+          showInfo: false,
+        }}
+        itemRender={(originNode, file, fileList, { download, preview, remove }) => {
+          return <div>{originNode}</div>;
+        }}
         disabled={props?.disabled || status === 'uploading'}
         {...omit(props, ['onChange'])}
       >
-        {fileList.length < 1 && <Typography.Text type="secondary">+ 上传</Typography.Text>}
+        {fileList.length < 1 && <Typography.Text type="secondary">{uploadText}</Typography.Text>}
       </Upload>
 
       <Modal open={previewOpen} title={previewTitle} footer={null} onCancel={handleCancel}>
