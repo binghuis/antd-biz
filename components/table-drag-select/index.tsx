@@ -2,7 +2,8 @@ import SelectionArea, { SelectionEvent } from '@viselect/react';
 import { theme } from 'antd';
 import { useState } from 'react';
 import './index.css';
-type TableDragSelectProps = {
+
+export type TableDragSelectProps = {
   rows: number;
   cols: number;
   initialValue?: boolean[][];

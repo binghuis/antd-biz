@@ -16,7 +16,7 @@ const getBase64 = (file: RcFile): Promise<string> => {
   });
 };
 
-interface SingleUploadProps<Response extends { fileUri: string | number } | void>
+export interface SingleUploadProps<Response extends { fileUri: string | number } | void>
   extends Omit<
     UploadProps,
     | 'action'
