@@ -120,7 +120,7 @@ const SingleUpload: React.FC<SingleUploadProps<{ fileUri: string | number } | vo
           showInfo: false,
         }}
         itemRender={(originNode, file, fileList, { download, preview, remove }) => {
-          return <div>{originNode}</div>;
+          return originNode;
         }}
         disabled={props?.disabled || status === 'uploading'}
         {...omit(props, ['onChange'])}
